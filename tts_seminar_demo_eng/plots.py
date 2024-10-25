@@ -6,24 +6,11 @@ from tqdm import tqdm
 
 from tts_seminar_demo_eng.config import FIGURES_DIR, PROCESSED_DATA_DIR
 
-app = typer.Typer()
+import matplotlib.pyplot as plt
+
+from typing import Optional, List, Tuple, Dict
 
 
-@app.command()
-def main(
-    # ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
-    input_path: Path = PROCESSED_DATA_DIR / "dataset.csv",
-    output_path: Path = FIGURES_DIR / "plot.png",
-    # -----------------------------------------
-):
-    # ---- REPLACE THIS WITH YOUR OWN CODE ----
-    logger.info("Generating plot from data...")
-    for i in tqdm(range(10), total=10):
-        if i == 5:
-            logger.info("Something happened for iteration 5.")
-    logger.success("Plot generation complete.")
-    # -----------------------------------------
+logger.info(f"Figures directory is: {FIGURES_DIR}")
 
-
-if __name__ == "__main__":
-    app()
+def plot_spectrogram(spectrogram)
